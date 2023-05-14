@@ -8,8 +8,8 @@ function validateUsername(username) {
     return regex.test(password);
   }
 
-  function isEmpty(username, password, fullname, email, phoneNumber,department) {
-    if (!username || !password || !fullname || !email || !phoneNumber || !department) {
+  function isEmpty(username, password, fullname, email, phoneNumber) {
+    if (!username || !password || !fullname || !email || !phoneNumber ) {
       return true;
     }
     return false;

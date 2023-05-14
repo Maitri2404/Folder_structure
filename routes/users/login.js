@@ -1,31 +1,31 @@
-const fs=require('fs');
-require('dotenv').config();
-const jwt=require('jsonwebtoken');
-const bcrypt=require('bcrypt');
-const {getUsersFromFile}=require('./v1/middlewareV1')
-// const {login }=require('./v1/controllerV1');
+// const fs=require('fs');
+// require('dotenv').config();
+// const jwt=require('jsonwebtoken');
+// const bcrypt=require('bcrypt');
+// const {getUsersFromFile}=require('./v1/middlewareV1')
+// // const {login }=require('./v1/controllerV1');
 
-function login(req,res){
-    const {username,password}=req.body;
-    const data=getUsersFromFile();
-    const userFound=data.users.find((user)=>user.username===username);
-    if(!userFound){
-        return res.status(404).json({error:"user not found"})
-    }
-    bcrypt.compare(password,userFound.password,(err,isMatch)=>{
-        if(err){
-            res.json({Error:err})
-        }
-        else if(!isMatch){
-            res.send("Password doesn't match")
-        }
-        else{
-            const token=jwt.sign({username:user.username},process.env.SECRET_KEY)
-            res.json({token})
-            console.log(token);
-        }
-    })
-}
+// function login(req,res){
+//     const {username,password}=req.body;
+//     const data=getUsersFromFile();
+//     const userFound=data.users.find((user)=>user.username===username);
+//     if(!userFound){
+//         return res.status(404).json({error:"user not found"})
+//     }
+//     bcrypt.compare(password,userFound.password,(err,isMatch)=>{
+//         if(err){
+//             res.json({Error:err})
+//         }
+//         else if(!isMatch){
+//             res.send("Password doesn't match")
+//         }
+//         else{
+//             const token=jwt.sign({username:user.username},process.env.SECRET_KEY)
+//             res.json({token})
+//             console.log(token);
+//         }
+//     })
+// }
 
 function authenticateToken(req, res, next) {
     const token = req.headers['authorization'];
@@ -58,4 +58,4 @@ function authenticateToken(req, res, next) {
     return false;
   }
   
-module.exports={authenticateToken,login}
+// module.exports={authenticateToken,login}

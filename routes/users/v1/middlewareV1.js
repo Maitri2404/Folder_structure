@@ -23,53 +23,50 @@ function defaultRoute(req,res){
 }
 
 
-function validateApiKey(req, res, next) {
-  const apiKey = req.headers['x-api-key'];
-  if (apiKey !== 'mncd1234') {
-    res.status(401).json({ error: 'Invalid API key' });
-  } else {
-    next();
-  }
-}
+// function validateApiKey(req, res, next) {
+//   const apiKey = req.headers['x-api-key'];
+//   if (apiKey !== 'mncd1234') {
+//     res.status(401).json({ error: 'Invalid API key' });
+//   } else {
+//     next();
+//   }
+// }
 
 function isAuthorized(department) {
-  if (department === 'node' || path.startsWith('/user')) {
+  if (department === 'node') {
     return true;
   }
   return false;
 }
 
 
-function authenticateToken(req, res, next) {
-  const token = req.headers['authorization'];
 
-  if (!token) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
+  function authenticateToken(req, res, next) {
+    const token = req.headers['authorization'];
+  
+    if (!token) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+  
+    jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+      if (err) {
+        return res.status(403).json({ error: 'Forbidden1' });
+      }
+      req.username = decoded.username;
+      const user = getUsersFromFile().users.find((user) => user.username === decoded.username);
+    
+      if (!user || !isAuthorized(user.department)) {
+        return res.status(403).json({ error: 'Forbidden2' });
+      }
 
-  const decodedUsername = verifyToken(token);
-
-  if (!decodedUsername) {
-    return res.status(403).json({ error: 'Forbidden' });
-  }
-
-  const data = getUsersFromFile();
-  const user = data.users.find((user) => user.username === decodedUsername);
-
-  if (!user || !isAuthorized(user.department, req.path, req.method)) {
-    return res.status(403).json({ error: 'Forbidden' });
-  }
-
-  next();
+    next();
+  });
 }
-
-
 
 module.exports = {
   getUsersFromFile,
   isUserUnique,
-  validateApiKey,
   defaultRoute,
-  authenticateToken
-
+  authenticateToken,
+  isAuthorized
 };

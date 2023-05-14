@@ -104,7 +104,7 @@
             "password": "$2b$10$IxIx/jDcBJnI.PUGBT8Q.eweqq.z4k0/QEyGyPa0ZJDnWuxmsP6iW",
             "email": "krish@temp.com",
             "phoneNumber": "8780984567",
-            "department":"react"
+            "department": "react"
         },
         {
             "fullname": "mrish",
@@ -112,7 +112,7 @@
             "password": "$2b$10$fwIMqSbO.DXHnfzN3K/qRu/VeQZ/g.BxAbKkMwskMIgYRFnzGkcya",
             "email": "mrish@temp.com",
             "phoneNumber": "8780984567",
-            "department":"node"
+            "department": "node"
         },
         {
             "fullname": "jrish",
@@ -120,7 +120,7 @@
             "password": "$2b$10$zmhQiWgLmG3GSJyb2fwhXukgTGY9QYd2xCgdJpPZD4igquvu1sWs2",
             "email": "jrish@temp.com",
             "phoneNumber": "8780984567",
-            "department":"react"
+            "department": "react"
         },
         {
             "fullname": "hir",
@@ -128,7 +128,22 @@
             "password": "$2b$10$d8miYzaoh.F5R8f83ueO7.RjvVplaMwc8dvY7gZfOUXEajOFQM39y",
             "email": "hir@temp.com",
             "phoneNumber": "8780984567",
-            "department":"node"
+            "department": "node"
+        },
+        {
+            "fullname": "hir",
+            "username": "HIMANI",
+            "password": "Himani@i",
+            "email": "himani@temp.com",
+            "phoneNumber": "8780984567"
+        },
+        {
+            "fullname": "hir",
+            "username": "KHIMANIP",
+            "password": "$2b$10$lnbeFVB6E30PI7BBspLo..hhaMaJabCnzWYEkxlLeAEfC5A72Ffp.",
+            "email": "khimani@temp.com",
+            "phoneNumber": "8780984567",
+            "department": "node"
         }
     ]
 }
