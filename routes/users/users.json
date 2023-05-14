@@ -1,0 +1,134 @@
+{
+    "users": [
+        {
+            "fullname": "krima trivedi",
+            "username": "KRIMA21456",
+            "password": "Password@345676",
+            "email": "krima@temp.com",
+            "phoneNumber": "8780984567"
+        },
+        {
+            "fullname": "drima trivedi",
+            "username": "drima",
+            "password": "password1245",
+            "email": "drima@temp.com",
+            "phoneNumber": "9780984567"
+        },
+        {
+            "fullname": "sona hbjb",
+            "username": "sona",
+            "password": "password888",
+            "email": "sona@temp.com",
+            "phoneNumber": "7780984567"
+        },
+        {
+            "fullname": "sonam smcwd",
+            "username": "sonam",
+            "password": "password888",
+            "email": "sonam@temp.com",
+            "phoneNumber": "7780984567"
+        },
+        {
+            "fullname": "kiran smcwd",
+            "username": "kiran",
+            "password": "password3454",
+            "email": "kiran@temp.com",
+            "phoneNumber": "9980984567"
+        },
+        {
+            "fullname": "miren smcwd",
+            "username": "miren",
+            "password": "password89454",
+            "email": "miren@temp.com",
+            "phoneNumber": "907984567"
+        },
+        {
+            "fullname": "jinal smcwd",
+            "username": "jinal",
+            "password": "password4",
+            "email": "jinal@temp.com",
+            "phoneNumber": "807984567"
+        },
+        {
+            "fullname": "jinal smcwd",
+            "username": "jigna",
+            "password": "password4",
+            "email": "jigna@temp.com",
+            "phoneNumber": "807984567"
+        },
+        {
+            "fullname": "jeel smcwd",
+            "username": "jeel",
+            "password": "password4",
+            "email": "jeel@temp.com",
+            "phoneNumber": "807984567"
+        },
+        {
+            "fullname": "zeel smcwd",
+            "username": "zeel",
+            "password": "password4",
+            "email": "zeel@temp.com",
+            "phoneNumber": "807984567"
+        },
+        {
+            "fullname": "kira smcwd",
+            "username": "kira",
+            "password": "password3454",
+            "email": "kira@temp.com",
+            "phoneNumber": "9980984567"
+        },
+        {
+            "fullname": "mita trivedi",
+            "username": "MITA21456",
+            "password": "Password#34",
+            "email": "mita@temp.com",
+            "phoneNumber": "8780984567"
+        },
+        {
+            "fullname": "Gita trivedi",
+            "username": "GITA214568",
+            "password": "$2b$10$84LJpuf3lnlaO8DR5SpzZOsJdh2NAgF8bAUGF8zDQYEz0lUuNWdMS",
+            "email": "gita@temp.com",
+            "phoneNumber": "8780984567"
+        },
+        {
+            "fullname": "mital trivedi",
+            "username": "K1234",
+            "password": "$2b$10$PnTxeA8B6UfyuCblIr8HKepXJx8JgND52Zve6S8srEq6mtBeC7dDu",
+            "email": "kinal@temp.com",
+            "phoneNumber": "8780984567"
+        },
+        {
+            "fullname": "krish",
+            "username": "KRISHH3245",
+            "password": "$2b$10$IxIx/jDcBJnI.PUGBT8Q.eweqq.z4k0/QEyGyPa0ZJDnWuxmsP6iW",
+            "email": "krish@temp.com",
+            "phoneNumber": "8780984567",
+            "department":"react"
+        },
+        {
+            "fullname": "mrish",
+            "username": "MRISHH3245",
+            "password": "$2b$10$fwIMqSbO.DXHnfzN3K/qRu/VeQZ/g.BxAbKkMwskMIgYRFnzGkcya",
+            "email": "mrish@temp.com",
+            "phoneNumber": "8780984567",
+            "department":"node"
+        },
+        {
+            "fullname": "jrish",
+            "username": "JRISHH3245",
+            "password": "$2b$10$zmhQiWgLmG3GSJyb2fwhXukgTGY9QYd2xCgdJpPZD4igquvu1sWs2",
+            "email": "jrish@temp.com",
+            "phoneNumber": "8780984567",
+            "department":"react"
+        },
+        {
+            "fullname": "hir",
+            "username": "HIRISHN",
+            "password": "$2b$10$d8miYzaoh.F5R8f83ueO7.RjvVplaMwc8dvY7gZfOUXEajOFQM39y",
+            "email": "hir@temp.com",
+            "phoneNumber": "8780984567",
+            "department":"node"
+        }
+    ]
+}
