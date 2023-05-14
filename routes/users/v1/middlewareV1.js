@@ -58,7 +58,6 @@ function isAuthorized(department) {
       if (!user || !isAuthorized(user.department)) {
         return res.status(403).json({ error: 'Forbidden2' });
       }
-
     next();
   });
 }
