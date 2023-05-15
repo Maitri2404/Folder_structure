@@ -1,8 +1,8 @@
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const saltRound=10;
-const { getUsersFromFile, isUserUnique } = require('./middlewareV2');
-const { validateAddUsername, validateAddPassword, validateUpdateUsername, validateUpdatePassword, isEmpty } = require('./validatorV2');
+const { getUsersFromFile, isUserUnique } = require('../middleware/middleware');
+const { validateAddUsername, validateAddPassword, validateUpdateUsername, validateUpdatePassword, isEmpty } = require('./validator');
 
 function handleAddUser(req, res) {
   const { fullname, username, password, email, phoneNumber, department } = req.body;
@@ -36,10 +36,12 @@ function handleGetUsers(req, res) {
     const data = getUsersFromFile();
     const users = data.users;
     res.status(200).json({message:"get users successfully",users});
-  }
+ }
 
 function handleUpdateUser(req, res) {
     const { username} = req.body;
+    // console.log(req.body);
+    // console.log(req.params);
     if(!validateUpdateUsername(username)) {
         res.status(400).json({
             error: 'Invalid username. It should contain all capital letter.'
@@ -61,7 +63,7 @@ function handleUpdateUser(req, res) {
     const hashedPassword =  bcrypt.hashSync(password, saltRound);
     if (!validateUpdatePassword(password)) {
       res.status(400).json({
-        error: 'Invalid password. It should have at least one capital letter, one small letter, one symbol, and a total length of 16 characters.',
+        error: 'Invalid password. It should have numbers.',
       });
     } else {
       const data = getUsersFromFile();
@@ -76,17 +78,27 @@ function handleUpdateUser(req, res) {
     }
   }
 
-  function handleLogin(req, res) {
+function handleLogin(req, res) {
     const { username, password } = req.body;
     const data = getUsersFromFile();
-    const user = data.users.find((user) => user.username === username && bcrypt.compareSync(password, user.password));
-    if (user) {
-      const token = generateToken(user.username);
-      res.status(200).json({ message: 'Login successful', token });
+    const user = data.users.find((user) => user.username === username);
+  
+    if (!user) {
+      res.status(404).json({ error: 'User not found' });
     } else {
-      res.status(401).json({ error: 'Invalid username or password' });
+      bcrypt.compare(password, user.password, (err, result) => {
+        if (err) {
+          res.json({ error: err });
+        } else if (result) {
+          const token = jwt.sign({ username: user.username }, process.env.SECRET_KEY, { expiresIn: '1h' });
+          res.json({ token });
+        } else {
+          res.status(401).json({ error: 'Invalid password' });
+        }
+      });
     }
   }
+  
   
   module.exports = { handleAddUser, handleGetUsers, handleUpdateUser, handleUpdatePassword, handleLogin };
   

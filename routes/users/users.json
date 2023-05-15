@@ -1,88 +1,12 @@
 {
     "users": [
         {
-            "fullname": "krima trivedi",
-            "username": "KRIMA21456",
-            "password": "Password@345676",
-            "email": "krima@temp.com",
-            "phoneNumber": "8780984567"
-        },
-        {
-            "fullname": "drima trivedi",
-            "username": "drima",
-            "password": "password1245",
-            "email": "drima@temp.com",
-            "phoneNumber": "9780984567"
-        },
-        {
-            "fullname": "sona hbjb",
-            "username": "sona",
-            "password": "password888",
-            "email": "sona@temp.com",
-            "phoneNumber": "7780984567"
-        },
-        {
-            "fullname": "sonam smcwd",
-            "username": "sonam",
-            "password": "password888",
-            "email": "sonam@temp.com",
-            "phoneNumber": "7780984567"
-        },
-        {
-            "fullname": "kiran smcwd",
-            "username": "kiran",
-            "password": "password3454",
-            "email": "kiran@temp.com",
-            "phoneNumber": "9980984567"
-        },
-        {
-            "fullname": "miren smcwd",
-            "username": "miren",
-            "password": "password89454",
-            "email": "miren@temp.com",
-            "phoneNumber": "907984567"
-        },
-        {
-            "fullname": "jinal smcwd",
-            "username": "jinal",
-            "password": "password4",
-            "email": "jinal@temp.com",
-            "phoneNumber": "807984567"
-        },
-        {
-            "fullname": "jinal smcwd",
-            "username": "jigna",
-            "password": "password4",
-            "email": "jigna@temp.com",
-            "phoneNumber": "807984567"
-        },
-        {
-            "fullname": "jeel smcwd",
-            "username": "jeel",
-            "password": "password4",
-            "email": "jeel@temp.com",
-            "phoneNumber": "807984567"
-        },
-        {
-            "fullname": "zeel smcwd",
-            "username": "zeel",
-            "password": "password4",
-            "email": "zeel@temp.com",
-            "phoneNumber": "807984567"
-        },
-        {
-            "fullname": "kira smcwd",
-            "username": "kira",
-            "password": "password3454",
-            "email": "kira@temp.com",
-            "phoneNumber": "9980984567"
-        },
-        {
             "fullname": "mita trivedi",
             "username": "MITA21456",
             "password": "Password#34",
             "email": "mita@temp.com",
-            "phoneNumber": "8780984567"
+            "phoneNumber": "8780984567",
+            "department": "react"
         },
         {
             "fullname": "Gita trivedi",
@@ -96,7 +20,8 @@
             "username": "K1234",
             "password": "$2b$10$PnTxeA8B6UfyuCblIr8HKepXJx8JgND52Zve6S8srEq6mtBeC7dDu",
             "email": "kinal@temp.com",
-            "phoneNumber": "8780984567"
+            "phoneNumber": "8780984567",
+            "department": "node"
         },
         {
             "fullname": "krish",
@@ -139,9 +64,25 @@
         },
         {
             "fullname": "hir",
-            "username": "KHIMANIP",
-            "password": "$2b$10$lnbeFVB6E30PI7BBspLo..hhaMaJabCnzWYEkxlLeAEfC5A72Ffp.",
+            "username": "KHIMANIPI",
+            "password": "$2b$10$2IO4/k3ov.kjuWypMRLEiu8kwmaZTTEJGG4yETUWfWwoH/h2UJpuC",
             "email": "khimani@temp.com",
+            "phoneNumber": "8780984567",
+            "department": "node"
+        },
+        {
+            "fullname": "Nir",
+            "username": "NIR",
+            "password": "$2b$10$kUaK1DA2nk9gqA7xFPh7heOiKkq9.E6b.9HSHdZY4MoZoazqnXbtu",
+            "email": "nir@temp.com",
+            "phoneNumber": "8780984567",
+            "department": "node"
+        },
+        {
+            "fullname": "Nirav",
+            "username": "NIRAV1234",
+            "password": "$2b$10$19pr261iPvqBvRPEDsah/OlQEhwW3OwbZPrLO64alnZduaoARH05K",
+            "email": "nirav@temp.com",
             "phoneNumber": "8780984567",
             "department": "node"
         }

@@ -3,17 +3,16 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 const saltRound = 10;
 const jwt = require('jsonwebtoken');
-const {getUsersFromFile,isUserUnique,} = require('./middlewareV1');
-const {validateUsername,validatePassword,isEmpty,} = require('./validatorV1');
+const { getUsersFromFile, isUserUnique, } = require('../middleware/middleware');
+const { validateUsername, validatePassword, isEmpty, validatePhoneNumber } = require('./validator');
 
 function handleAddUser(req, res) {
   const { fullname, username, password, email, phoneNumber, department } = req.body;
   const hashedPassword = bcrypt.hashSync(password, saltRound);
-
   const user = {
     fullname,
     username,
-    password:hashedPassword,
+    password: hashedPassword,
     email,
     phoneNumber,
     department,
@@ -29,7 +28,10 @@ function handleAddUser(req, res) {
     res.status(400).json({
       error: 'Invalid password. It should contain at least one capital letter, one small letter, one symbol, and a total length of 16 characters.',
     });
-  } else {
+  } else if (!validatePhoneNumber(user.phoneNumber)) {
+    res.status(400).json({ error: "Please enter valid phone number" })
+  }
+  else {
     const data = getUsersFromFile();
     data.users.push(user);
     fs.writeFileSync('./routes/users/users.json', JSON.stringify(data));
@@ -57,13 +59,14 @@ function handleUpdateUser(req, res) {
     } else {
       user.username = username;
       fs.writeFileSync('./routes/users/users.json', JSON.stringify(data));
-      res.status(200).json({ message: 'User updated successfully' });
+      res.status(200).json({ message: 'Username updated successfully' });
     }
   }
 }
 
 function handleUpdatePassword(req, res) {
   const { username, password } = req.body;
+  console.log("req", req.body)
   const hashedPassword = bcrypt.hashSync(password, saltRound);
   if (!validatePassword(password)) {
     res.status(400).json({
@@ -102,6 +105,5 @@ function handleLogin(req, res) {
     });
   }
 }
-
 
 module.exports = { handleAddUser, handleGetUsers, handleUpdateUser, handleUpdatePassword, handleLogin };
